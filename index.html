@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio de Tarifas, Servicios y Políticas de Hospedaje</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --verde-bosque: #1b3b32;
+      --verde-medio: #295246;
+      --crema-fondo: #f4f2ec;
+      --crema-suave: #faf9f5;
+      --dorado: #b89656;
+      --texto-oscuro: #1f2421;
+      --texto-gris: #525b56;
+      --borde: #e2dfd5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #e6e3da;
+      color: var(--texto-oscuro);
+      line-height: 1.55;
+      padding: 32px 16px;
+    }
+
+    /* Barra flotante superior (no se imprime) */
+    .toolbar {
+      max-width: 920px;
+      margin: 0 auto 16px auto;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn-pdf {
+      background-color: var(--verde-bosque);
+      color: #ffffff;
+      border: 1px solid var(--dorado);
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-pdf:hover {
+      background-color: var(--verde-medio);
+    }
+
+    /* Contenedor estilo documento PDF */
+    .document-sheet {
+      max-width: 920px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      box-shadow: 0 18px 45px rgba(20, 35, 28, 0.14);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* Encabezado Editorial */
+    .hero-header {
+      background: linear-gradient(135deg, var(--verde-bosque) 0%, #122822 100%);
+      color: #ffffff;
+      padding: 48px 44px;
+      border-bottom: 4px solid var(--dorado);
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      color: #d8e2de;
+      font-size: 0.98rem;
+      max-width: 640px;
+    }
+
+    .hero-meta {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 0.85rem;
+      color: #e6ece9;
+    }
+
+    .hero-meta span strong {
+      color: var(--dorado);
+    }
+
+    /* Secciones */
+    .section {
+      padding: 38px 44px;
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--dorado);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      color: var(--verde-bosque);
+      font-weight: 700;
+    }
+
+    /* Grid de Habitaciones */
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .room-card {
+      background-color: var(--crema-suave);
+      border: 1px solid var(--borde);
+      border-left: 4px solid var(--verde-bosque);
+      border-radius: 6px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .room-card.featured {
+      grid-column: span 2;
+      border-left-color: var(--dorado);
+      background-color: var(--crema-fondo);
+    }
+
+    .room-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .room-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font
